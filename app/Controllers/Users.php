@@ -1,39 +1,14 @@
-<?php
+<?php namespace App\Controllers;
 
-namespace App\Controllers;
+use App\Models\UserModel;
 
 class Users extends BaseController
 {
     public function index()
     {
-        $data['users'] = [
-            [
-                'username' => 'admin',
-                'fullname' => 'John Rock',
-                'role'     => 'Administrator'
-            ],
-            [
-                'username' => 'cashier1',
-                'fullname' => 'Mary Grace',
-                'role'     => 'Cashier'
-            ],
-            [
-                'username' => 'manager1',
-                'fullname' => 'Robert Downey Jr.',
-                'role'     => 'Manager'
-            ],
-            [
-                'username' => 'staff1',
-                'fullname' => 'Kevin Durant',
-                'role'     => 'Staff'
-            ],
-            [
-                'username' => 'staff2',
-                'fullname' => 'Sarah Geronimo',
-                'role'     => 'Staff'
-            ]
-        ];
+        $userModel = new UserModel();
+        $data['users'] = $userModel->findAll();
 
-        return view('users', $data);
+        return view('users', $data); // Changed 'users_view' to 'users'
     }
 }

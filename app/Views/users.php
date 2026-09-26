@@ -24,12 +24,12 @@
         </tr>
 
         <?php foreach ($users as $user): ?>
-            <tr>
-                <td><?= $user['username']; ?></td>
-                <td><?= $user['fullname']; ?></td>
-                <td><?= $user['role']; ?></td>
-            </tr>
-        <?php endforeach; ?>
+    <tr>
+        <td><?= $user['username']; ?></td>
+        <td><?= $user['full_name']; ?></td>
+        <td><?= $user['created_at']; ?></td>
+     </tr>
+    <?php endforeach; ?>
     </table>
 
 </body>
